@@ -1,51 +1,263 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #1a1a1c;
-  color: #fff;
+/* ✅ Ensure Full Page Height */
+html,
+body,
+#root,
+.App {
+  /* height: 100%; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.coin-app {
+/* ✅ Allow Main Content to Expand */
+.App {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 64px;
-  color: #fff;
+  justify-content: flex-start;
+  padding: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.coin-search {
-  margin-bottom: 64px;
+/* ✅ Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* ✅ Navbar Adjustments */
+.navbar {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  padding: 15px 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.coin-text {
-  margin-bottom: 32px;
+.nav-title {
+  flex: 1;
   text-align: center;
 }
 
-.coin-input {
-  padding-left: 16px;
-  width: 300px;
-  height: 50px;
-  border-radius: 4px;
-  border: none;
-  background-image: linear-gradient(
-    -225deg,
-    #ac32e4 0%,
-    #7918f2 48%,
-    #4801ff 100%
-  );
-
-  color: #e2e2e2;
+/* ✅ Dark Mode Button Adjustments */
+.dark-mode-toggle {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
 }
 
-.coin-input::placeholder {
-  color: #e2e2e2;
+.dark-mode-toggle:hover {
+  background: white;
+  color: #1e3c72;
+}
+
+/* ✅ Search Bar & Watchlist */
+.search-watchlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #1e3c72;
+  border-radius: 5px;
+}
+
+/* ✅ Watchlist Button */
+.watchlist-toggle {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: #1e3c72;
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.watchlist-toggle:hover {
+  background-color: #2a5298;
+}
+
+/* ✅ Filters Section Responsive */
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px auto;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 900px;
+}
+
+/* ✅ Dark Mode for Filters */
+.dark-mode .filters-container {
+  background: #333;
+}
+
+/* ✅ Filter Inputs */
+.filters-container label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.filters-container input {
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+  width: 80px;
+}
+
+/* ✅ Responsive Chart Dropdown */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.chart-dropdown {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ✅ Crypto Table Adjustments */
+.crypto-table-container {
+  width: 100%;
+  /* overflow-x: auto; */
+}
+
+.crypto-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-table th,
+.crypto-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.crypto-table th {
+  background-color: #1e3c72;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.crypto-table th:hover {
+  background-color: #2a5298;
+}
+
+.dark-mode .crypto-table th {
+  background-color: #333;
+}
+
+/* ✅ Ensure Coin Images Don't Stretch Rows */
+.coin-img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+/* ✅ Pagination Styling */
+
+/* ✅ Ensure Pagination Stays at Bottom */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background-color: #1e3c72;
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #2a5298;
+}
+
+/* ✅ Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search-watchlist {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .filters-container label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .crypto-table th,
+  .crypto-table td {
+    font-size: 12px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .watchlist-toggle {
+    width: 100%;
+    text-align: center;
+  }
 }

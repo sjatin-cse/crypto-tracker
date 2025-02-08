@@ -1,0 +1,19 @@
+.crypto-chart {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .crypto-chart {
+    background: #222;
+    color: white;
+}
+
+.crypto-chart canvas {
+    width: 100% !important;
+    height: auto !important;
+}

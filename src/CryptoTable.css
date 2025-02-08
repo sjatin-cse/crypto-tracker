@@ -1,0 +1,99 @@
+.crypto-table-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* overflow-x: auto; */
+}
+
+.crypto-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* ✅ Fix uneven column widths */
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-table th,
+.crypto-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+    /* Prevents text from breaking */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.crypto-table th {
+    background-color: #1e3c72;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.crypto-table th:hover {
+    background-color: #2a5298;
+}
+
+.dark-mode .crypto-table th {
+    background-color: #333;
+}
+
+/* ✅ Ensure Coin Images Don't Stretch Rows */
+.coin-img {
+    width: 30px;
+    /* Set a fixed width */
+    height: 30px;
+    /* Set a fixed height */
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+/* ✅ Fix Column Widths */
+.crypto-table th:first-child,
+.crypto-table td:first-child {
+    width: 5%;
+}
+
+.crypto-table th:nth-child(2),
+.crypto-table td:nth-child(2) {
+    width: 20%;
+}
+
+.crypto-table th:nth-child(3),
+.crypto-table td:nth-child(3) {
+    width: 10%;
+}
+
+.crypto-table th:nth-child(4),
+.crypto-table td:nth-child(4) {
+    width: 15%;
+}
+
+.crypto-table th:nth-child(5),
+.crypto-table td:nth-child(5) {
+    width: 15%;
+}
+
+.crypto-table th:nth-child(6),
+.crypto-table td:nth-child(6) {
+    width: 15%;
+}
+
+/* Green and Red for Price Change */
+.green {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.red {
+    color: #dc3545;
+    font-weight: bold;
+}
